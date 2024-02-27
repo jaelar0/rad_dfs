@@ -1,7 +1,3 @@
-# rad_dfs
-# rad_dfs
-# rad_dfs
-# rad_dfs
-# rad_dfs
-# rad_dfs
-# rad_dfs
+# RAD DFS 
+
+data wrangling and analytics repository for DFS

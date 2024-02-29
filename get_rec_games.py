@@ -12,7 +12,7 @@ def get_all_ids():
     con = sqlite3.connect("""./RAD.sqlite3""")
     game_schedules = pd.read_sql("""SELECT * FROM 
                                 NBA_GAME_DETAILS_CUR 
-                                WHERE DATE(GAME_DATE) between '2024-02-13' and '2024-02-27'
+                                WHERE DATE(GAME_DATE)= '2024-02-29'
                                 """, con=con)
     con.close()
 
@@ -51,11 +51,6 @@ def main():
 
     for i in range(0, len(game_list)):
         df = get_game_data(game_list[i])
-        # test_xml_data = df["DATA"].values.tolist()
-        # test_xml_cont = test_xml_data[0].strip()
-
-        # with open("./xml_rec_data.xml", 'w', encoding='utf-8') as new_file:
-        #     new_file.write(test_xml_cont)
         connect_psql(df, 'NBA_API_RAW_DATA', 'append')
         print(i)
         print(game_list[i])

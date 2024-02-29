@@ -1,4 +1,3 @@
-import sqlite3
 import pandas as pd
 import xml.etree.ElementTree as ET
 import psycopg2
@@ -183,7 +182,7 @@ def connect_psql(dataframe, table_name, exists):
 
 def main():
 
-    for i in range(837, 877):
+    for i in range(888, 894):
     # for i in range(0, 798):
         exec_query(i)
         tree = ET.parse('./xml_play_data.xml')
@@ -446,6 +445,7 @@ def main():
         connect_psql(quarter_xref_df, "QUARTER_GAME_XREF_CURR", 'append')
         connect_psql(full_result_data, "TEAM_GAME_DETAILS_CURR", 'append')
         connect_psql(loc_data_df, "EVENT_LOCATIONS_CURR", 'append')
+        connect_psql(ft_player_df, "FREE_THROWS_CURR", 'append')
 
         print(i)
         print("-----")

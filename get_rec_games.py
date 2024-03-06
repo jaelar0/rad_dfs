@@ -12,7 +12,7 @@ def get_all_ids():
     con = sqlite3.connect("""./RAD.sqlite3""")
     game_schedules = pd.read_sql("""SELECT * FROM 
                                 NBA_GAME_DETAILS_CUR 
-                                WHERE DATE(GAME_DATE)= '2024-02-29'
+                                WHERE DATE(GAME_DATE) between '2024-03-01' and '2024-03-06'
                                 """, con=con)
     con.close()
 

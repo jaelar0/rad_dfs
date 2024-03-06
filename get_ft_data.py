@@ -101,8 +101,17 @@ def connect_psql(dataframe, table_name, exists):
     conn.close()
 
 def main():
+        
+    for i in range(1, 894):
+    # for i in range(0, 1):
+        exec_query(i)
+        tree = ET.parse('./xml_play_data.xml')
+        remove_namespace(tree)
+        tree.write('./xml_data_output.xml')
+        xml_file = "./xml_data_output.xml"
+        tree = ET.parse(xml_file)
+        root = tree.getroot()
 
-    for i in range(0, 877):
         # Free Throws Statistics Tbl
         ft_player_id_list, ft_player_names = get_player_att('freethrow')
         ft_event_ids = get_event_id('freethrow')

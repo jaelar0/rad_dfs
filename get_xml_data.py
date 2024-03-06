@@ -182,7 +182,7 @@ def connect_psql(dataframe, table_name, exists):
 
 def main():
 
-    for i in range(888, 894):
+    for i in range(894, 939):
     # for i in range(0, 798):
         exec_query(i)
         tree = ET.parse('./xml_play_data.xml')

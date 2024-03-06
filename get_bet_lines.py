@@ -42,7 +42,7 @@ def get_underdog():
     'Sec-Fetch-Mode': 'cors',
     'Sec-Fetch-Site': 'same-site',
     'If-None-Match': 'W/"ed578f97b69887054ceb04ac79bd2a05"',
-    'TE': 'trailers'
+    'TE': 'trailers'    
     }
 
     response = requests.request("GET", url, headers=headers, data=payload)
